@@ -2,6 +2,8 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+@use 'sass:map';
+
 // This file contains all the theme variables for both the Firefox and Mozilla
 // themes. Mixins and functions can draw from these variable maps, swapping to
 // a different map based on the value of the global $brand-theme variable.
@@ -9,7 +11,7 @@
 // * -------------------------------------------------------------------------- */
 // Vertical and Horizontal Spacing
 
-$theme-spacing: (
+$spacing: (
     // xs
     v-grid-xs: $layout-md,
     h-grid-xs: $layout-xs,
@@ -27,188 +29,41 @@ $theme-spacing: (
     h-grid-xl: 80px,
 );
 
-// * -------------------------------------------------------------------------- */
-// Fonts
 
-$theme-fonts-firefox: (
-    body-font-family: $font-stack-base,
-    button-font-family: $font-stack-firefox,
-    title-font-family: $font-stack-firefox,
-);
-$theme-fonts-mozilla: (
-    body-font-family: $font-stack-base,
-    button-font-family: $font-stack-base,
-    title-font-family: $font-stack-mozilla,
-);
-
-// * -------------------------------------------------------------------------- */
-// Colors
-
-$theme-colors-firefox: (
-    background-color-tertiary-inverse: $color-ink-20,
-    background-color-tertiary: $color-marketing-gray-20,
-    background-color-secondary-inverse: $color-ink-50,
-    background-color-secondary: $color-light-gray-10,
-    background-color-inverse: $color-ink-80,
-    background-color: $color-white,
-    body-text-color-secondary-inverse: $color-marketing-gray-30,
-    body-text-color-secondary: $color-marketing-gray-70,
-    body-text-color-inverse: $color-white,
-    body-text-color: $color-marketing-gray-80,
-    link-color-hover-inverse: $color-blue-05,
-    link-color-hover: $color-link-hover,
-    link-color-inverse: $color-blue-10,
-    link-color-visited-hover-inverse: $color-violet-05,
-    link-color-visited-hover: $color-link-hover,
-    link-color-visited-inverse: $color-violet-10,
-    link-color-visited: $color-link-visited,
-    link-color: $color-link,
-    title-text-color-inverse: $color-white,
-    title-text-color: $color-marketing-gray-99,
-);
-$theme-colors-mozilla: (
-    background-color-tertiary-inverse: $color-dark-gray-40,
-    background-color-tertiary: $color-light-gray-30,
-    background-color-secondary-inverse: $color-dark-gray-60,
-    background-color-secondary: $color-light-gray-10,
-    background-color-inverse: $color-black,
-    background-color: $color-white,
-    body-text-color-secondary-inverse: $color-light-gray-30,
-    body-text-color-secondary: $color-dark-gray-90,
-    body-text-color-inverse: $color-white,
-    body-text-color: $color-black,
-    link-color-hover-inverse: $color-blue-05,
-    link-color-hover: $color-link-hover,
-    link-color-inverse: $color-blue-10,
-    link-color-visited-hover-inverse: $color-violet-05,
-    link-color-visited-hover: $color-link-hover,
-    link-color-visited-inverse: $color-violet-10,
-    link-color-visited: $color-link-visited,
-    link-color: $color-link,
-    title-text-color-inverse: $color-white,
-    title-text-color: $color-black,
-);
-
-// * -------------------------------------------------------------------------- */
-// Type scale
-
-// These values are used by the type-scale() function
-// defined in includes/functions/_typography.scss
-
-// Avoid referencing these values directly; Use the function.
-
-$theme-type-scale-firefox: (
-    title-2xl-size: 64px,
-    title-2xl-line-height: 1.125,
-    title-xl-size: 56px,
-    title-xl-line-height: 1.143,
-    title-lg-size: 48px,
-    title-lg-line-height: 1.166,
-    title-md-size: 40px,
-    title-md-line-height: 1.1,
-    title-sm-size: 32px,
-    title-sm-line-height: 1.125,
-    title-xs-size: 24px,
-    title-xs-line-height: 1.166,
-    title-2xs-size: 20px,
-    title-2xs-line-height: 1.2,
-    title-3xs-size: 16px,
-    title-3xs-line-height: 1.25,
-    body-xl-size: 21px,
-    body-lg-size: 18px,
-    body-md-size: 16px,
-    body-sm-size: 14px,
-    body-xs-size: 12px,
-    body-line-height: 1.5,
-);
-$theme-type-scale-mozilla: (
-    title-2xl-size: 76px,
-    title-2xl-line-height: 1,
-    title-xl-size: 66px,
-    title-xl-line-height: 1,
-    title-lg-size: 56px,
-    title-lg-line-height: 1,
-    title-md-size: 48px,
-    title-md-line-height: 1,
-    title-sm-size: 38px,
-    title-sm-line-height: 1.05,
-    title-xs-size: 28px,
-    title-xs-line-height: 1.07,
-    title-2xs-size: 24px,
-    title-2xs-line-height: 1.08,
-    title-3xs-size: 18px,
-    title-3xs-line-height: 1.11,
-    body-xl-size: 21px,
-    body-lg-size: 18px,
-    body-md-size: 16px,
-    body-sm-size: 14px,
-    body-xs-size: 12px,
-    body-line-height: 1.5,
-);
-
-// * -------------------------------------------------------------------------- */
-// Condensed Type scale
-
-// This smaller scale is primarily intended for web apps.
-// Use the standard type scale for marketing sites.
-
-// The type-scale() function draws from this map to output
-// different sizing based on the $type-scale variable.
-
-// Avoid referencing these values directly.
-
-$theme-type-scale-condensed-firefox: (
-    title-2xl-size: 32px,
-    title-2xl-line-height: 1.125,
-    title-xl-size: 24px,
-    title-xl-line-height: 1.166,
-    title-lg-size: 21px,
-    title-lg-line-height: 1.2,
-    title-md-size: 18px,
-    title-md-line-height: 1.2,
-    title-sm-size: 16px,
-    title-sm-line-height: 1.25,
-    title-xs-size: 14px,
-    title-xs-line-height: 1.25,
-    title-2xs-size: 14px,
-    title-2xs-line-height: 1.25,
-    title-3xs-size: 14px,
-    title-3xs-line-height: 1.25,
-    body-xl-size: 18px,
-    body-lg-size: 16px,
-    body-md-size: 14px,
-    body-sm-size: 12px,
-    body-xs-size: 11px,
-    body-line-height: 1.5,
-);
-$theme-type-scale-condensed-mozilla: (
-    title-2xl-size: 34px,
-    title-2xl-line-height: 1,
-    title-xl-size: 26px,
-    title-xl-line-height: 1,
-    title-lg-size: 22px,
-    title-lg-line-height: 1,
-    title-md-size: 20px,
-    title-md-line-height: 1,
-    title-sm-size: 18px,
-    title-sm-line-height: 1,
-    title-xs-size: 16px,
-    title-xs-line-height: 1,
-    title-2xs-size: 14px,
-    title-2xs-line-height: 1,
-    title-3xs-size: 14px,
-    title-3xs-line-height: 1,
-    body-xl-size: 18px,
-    body-lg-size: 16px,
-    body-md-size: 14px,
-    body-sm-size: 12px,
-    body-xs-size: 11px,
-    body-line-height: 1.5,
-);
-
-// Collect the maps for easier reference, so you don't have to refer to a specific submap.
+// Get a type scale value from the scale map
 // Usage:
-//    map-get($theme-firefox, 'background-color-secondary');
+//    type-scale('scale-value');
+// Size values are define in pixels. Use the font-size() mixin
+// to convert to rem with px fallback. Example:
+//    @include font-size(type-scale('title-xl-size'));
+// An alternative, condensed type scale is defined in a separate
+// map. When the $type-scale variable is set to 'condensed' this
+// function will draw its values from that alternative map.
 
-$theme-firefox: map-collect($theme-spacing, $theme-fonts-firefox, $theme-colors-firefox, $theme-type-scale-firefox);
-$theme-mozilla: map-collect($theme-spacing, $theme-fonts-mozilla, $theme-colors-mozilla, $theme-type-scale-mozilla);
+@function type-scale($type-scale, $type-scale-condensed, $scale) {
+    // Default
+    $scale-map: $type-scale;
+
+    @if $type-scale == 'condensed' {
+        $scale-map: $type-scale-condensed;
+    }
+
+    @if not map-has-key($scale-map, $scale) {
+        @error '`#{$scale}` is not a valid type scale variable name. ' + 'Valid variable names: #{map-keys($scale-map)}';
+    }
+
+    @return map-get($scale-map, $scale);
+}
+
+// Get a theme variable from the collected map.
+// This swaps the map based on the value of $brand-theme.
+// Theme maps are defined in includes/_theme.scss
+
+@function get($theme-map, $var) {
+
+    @if not map-has-key($theme-map, $var) {
+        @error '`#{$var}` is not a valid theme variable. ' + 'Valid theme variable names: #{map-keys($theme-map)}';
+    }
+
+    @return map-get($theme-map, $var);
+}

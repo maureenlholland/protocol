@@ -1,0 +1,93 @@
+@use './themes';
+@use './functions';
+
+$fonts: (
+    body-font-family: $font-stack-base,
+    button-font-family: $font-stack-firefox,
+    title-font-family: $font-stack-firefox,
+);
+
+$type-scale: (
+    title-2xl-size: 64px,
+    title-2xl-line-height: 1.125,
+    title-xl-size: 56px,
+    title-xl-line-height: 1.143,
+    title-lg-size: 48px,
+    title-lg-line-height: 1.166,
+    title-md-size: 40px,
+    title-md-line-height: 1.1,
+    title-sm-size: 32px,
+    title-sm-line-height: 1.125,
+    title-xs-size: 24px,
+    title-xs-line-height: 1.166,
+    title-2xs-size: 20px,
+    title-2xs-line-height: 1.2,
+    title-3xs-size: 16px,
+    title-3xs-line-height: 1.25,
+    body-xl-size: 21px,
+    body-lg-size: 18px,
+    body-md-size: 16px,
+    body-sm-size: 14px,
+    body-xs-size: 12px,
+    body-line-height: 1.5,
+);
+
+$type-scale-condensed: (
+    title-2xl-size: 32px,
+    title-2xl-line-height: 1.125,
+    title-xl-size: 24px,
+    title-xl-line-height: 1.166,
+    title-lg-size: 21px,
+    title-lg-line-height: 1.2,
+    title-md-size: 18px,
+    title-md-line-height: 1.2,
+    title-sm-size: 16px,
+    title-sm-line-height: 1.25,
+    title-xs-size: 14px,
+    title-xs-line-height: 1.25,
+    title-2xs-size: 14px,
+    title-2xs-line-height: 1.25,
+    title-3xs-size: 14px,
+    title-3xs-line-height: 1.25,
+    body-xl-size: 18px,
+    body-lg-size: 16px,
+    body-md-size: 14px,
+    body-sm-size: 12px,
+    body-xs-size: 11px,
+    body-line-height: 1.5,
+);
+
+$colors: (
+    background-color-tertiary-inverse: $color-ink-20,
+    background-color-tertiary: $color-marketing-gray-20,
+    background-color-secondary-inverse: $color-ink-50,
+    background-color-secondary: $color-light-gray-10,
+    background-color-inverse: $color-ink-80,
+    background-color: $color-white,
+    body-text-color-secondary-inverse: $color-marketing-gray-30,
+    body-text-color-secondary: $color-marketing-gray-70,
+    body-text-color-inverse: $color-white,
+    body-text-color: $color-marketing-gray-80,
+    link-color-hover-inverse: $color-blue-05,
+    link-color-hover: $color-link-hover,
+    link-color-inverse: $color-blue-10,
+    link-color-visited-hover-inverse: $color-violet-05,
+    link-color-visited-hover: $color-link-hover,
+    link-color-visited-inverse: $color-violet-10,
+    link-color-visited: $color-link-visited,
+    link-color: $color-link,
+    title-text-color-inverse: $color-white,
+    title-text-color: $color-marketing-gray-99,
+);
+
+$theme: functions.map-collect(themes.$spacing, $fonts, $colors, $type-scale, $type-scale-condensed);
+
+@function type-scale($scale) {
+    @return themes.type-scale($type-scale, $type-scale-condensed, $scale);
+}
+
+@function get($var) {
+    @return themes.get($theme, $var);
+}
+
+
