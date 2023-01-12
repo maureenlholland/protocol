@@ -1,6 +1,7 @@
 # HEAD
 
 ## Features
+* **css:** Replace `get-theme`, `type-scale` functions and theme and type-scale maps with CSS Custom Properties. Sass variables added for legacy support
 * **component:** Add centering classes for Logo and Wordmark. (#718)
 * **docs:** Migrate Protocol documentation site to Fractal.
 * **node:** Create a Webpack config for compiling docs using Fractal.
