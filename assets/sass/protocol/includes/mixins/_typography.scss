@@ -48,109 +48,209 @@
 //  .intro { @include text-body-lg; }
 
 @mixin text-title-2xl {
-    @include font-size(type-scale('title-xl-size'));
-    line-height: type-scale('title-xl-line-height');
+    font-size: $title-xl-size;
+    line-height: $title-xl-line-height;
 
     @media #{$mq-md} {
-        @include font-size(type-scale('title-2xl-size'));
-        line-height: type-scale('title-2xl-line-height');
+        font-size: $title-2xl-size;
+        line-height: $title-2xl-line-height;
+    }
+
+    @supports (--css: variables) {
+        font-size: var(--title-xl-size);
+        line-height: var(--title-xl-line-height);
+
+        @media #{$mq-md} {
+            font-size: var(--title-2xl-size);
+            line-height: var(--title-2xl-line-height);
+        }
     }
 }
 
 @mixin text-title-xl {
-    @include font-size(type-scale('title-lg-size'));
-    line-height: type-scale('title-lg-line-height');
+    font-size: $title-lg-size;
+    line-height: $title-lg-line-height;
 
     @media #{$mq-md} {
-        @include font-size(type-scale('title-xl-size'));
-        line-height: type-scale('title-xl-line-height');
+        font-size: $title-xl-size;
+        line-height: $title-xl-line-height;
+    }
+
+    @supports (--css: variables) {
+        font-size: var(--title-lg-size);
+        line-height: var(--title-lg-line-height);
+
+        @media #{$mq-md} {
+            font-size: var(--title-xl-size);
+            line-height: var(--title-xl-line-height);
+        }
     }
 }
 
 @mixin text-title-lg {
-    @include font-size(type-scale('title-md-size'));
-    line-height: type-scale('title-md-line-height');
+    font-size: $title-md-size;
+    line-height: $title-md-line-height;
 
     @media #{$mq-md} {
-        @include font-size(type-scale('title-lg-size'));
-        line-height: type-scale('title-lg-line-height');
+        font-size: $title-lg-size;
+        line-height: $title-lg-line-height;
+    }
+
+    @supports (--css: variables) {
+        font-size: var(--title-md-size);
+        line-height: var(--title-md-line-height);
+
+        @media #{$mq-md} {
+            font-size: var(--title-lg-size);
+            line-height: var(--title-lg-line-height);
+        }
     }
 }
 
 @mixin text-title-md {
-    @include font-size(type-scale('title-sm-size'));
-    line-height: type-scale('title-sm-line-height');
+    font-size: $title-sm-size;
+    line-height: $title-sm-line-height;
 
     @media #{$mq-md} {
-        @include font-size(type-scale('title-md-size'));
-        line-height: type-scale('title-md-line-height');
+        font-size: $title-md-size;
+        line-height: $title-md-line-height;
+    }
+
+    @supports (--css: variables) {
+        font-size: var(--title-sm-size);
+        line-height: var(--title-sm-line-height);
+
+        @media #{$mq-md} {
+            font-size: var(--title-md-size);
+            line-height: var(--title-md-line-height);
+        }
     }
 }
 
 @mixin text-title-sm {
-    @include font-size(type-scale('title-xs-size'));
-    line-height: type-scale('title-xs-line-height');
+    font-size: $title-xs-size;
+    line-height: $title-xs-line-height;
 
     @media #{$mq-md} {
-        @include font-size(type-scale('title-sm-size'));
-        line-height: type-scale('title-sm-line-height');
+        font-size: $title-sm-size;
+        line-height: $title-sm-line-height;
+    }
+
+    @supports (--css: variables) {
+        font-size: var(--title-xs-size);
+        line-height: var(--title-xs-line-height);
+
+        @media #{$mq-md} {
+            font-size: var(--title-sm-size);
+            line-height: var(--title-sm-line-height);
+        }
     }
 }
 
 @mixin text-title-xs {
-    @include font-size(type-scale('title-2xs-size'));
-    line-height: type-scale('title-2xs-line-height');
+    font-size: $title-2xs-size;
+    line-height: $title-2xs-line-height;
 
     @media #{$mq-md} {
-        @include font-size(type-scale('title-xs-size'));
-        line-height: type-scale('title-xs-line-height');
+        font-size: ($title-xs-size);
+        line-height: $title-xs-line-height;
+    }
+
+    @supports (--css: variables) {
+        font-size: var(--title-2xs-size);
+        line-height: var(--title-2xs-line-height);
+
+        @media #{$mq-md} {
+            font-size: var(--title-xs-size);
+            line-height: var(--title-xs-line-height);
+        }
     }
 }
 
 @mixin text-title-2xs {
-    @include font-size(type-scale('title-3xs-size'));
-    line-height: type-scale('title-3xs-line-height');
+    font-size: $title-3xs-size;
+    line-height: $title-3xs-line-height;
 
     @media #{$mq-md} {
-        @include font-size(type-scale('title-2xs-size'));
-        line-height: type-scale('title-2xs-line-height');
+        font-size: $title-2xs-size;
+        line-height: $title-2xs-line-height;
+    }
+
+    @supports (--css: variables) {
+        font-size: var(--title-3xs-size);
+        line-height: var(--title-3xs-line-height);
+
+        @media #{$mq-md} {
+            font-size: var(--title-2xs-size);
+            line-height: var(--title-2xs-line-height);
+        }
     }
 }
 
 @mixin text-title-3xs {
-    @include font-size(type-scale('title-3xs-size'));
-    line-height: type-scale('title-3xs-line-height');
+    font-size: $title-3xs-size;
+    line-height: $title-3xs-line-height;
+
+    @supports (--css: variables) {
+        font-size: var(--title-3xs-size);
+        line-height: var(--title-3xs-line-height);
+    }
 }
 
 // body copy
 @mixin text-body-xl {
-    @include font-size(type-scale('body-xl-size'));
-    line-height: type-scale('body-line-height');
+    font-size: $body-xl-size;
+    line-height: $body-line-height;
+
+    @supports (--css: variables) {
+        font-size: var(--body-xl-size);
+        line-height: var(--body-line-height);
+    }
 }
 
 @mixin text-body-lg {
-    @include font-size(type-scale('body-lg-size'));
-    line-height: type-scale('body-line-height');
+    font-size: $body-lg-size;
+    line-height: $body-line-height;
+
+    @supports (--css: variables) {
+        font-size: var(--body-lg-size);
+        line-height: var(--body-line-height);
+    }
 }
 
 @mixin text-body-md {
-    @include font-size(type-scale('body-md-size'));
-    line-height: type-scale('body-line-height');
+    font-size: $body-md-size;
+    line-height: $body-line-height;
+
+    @supports (--css: variables) {
+        font-size: var(--body-md-size);
+        line-height: var(--body-line-height);
+    }
 }
 
 @mixin text-body-sm {
-    @include font-size(type-scale('body-sm-size'));
-    line-height: type-scale('body-line-height');
+    font-size: $body-sm-size;
+    line-height: $body-line-height;
+
+    @supports (--css: variables) {
+        font-size: var(--title-xl-size);
+        line-height: var(--title-xl-line-height);
+    }
 }
 
 @mixin text-body-xs {
-    @include font-size(type-scale('body-xs-size'));
-    line-height: type-scale('body-line-height');
+    font-size: $body-xs-size;
+    line-height: $body-line-height;
+
+    @supports (--css: variables) {
+        font-size: var(--body-xs-size);
+        line-height: var(--body-line-height);
+    }
 }
 
 // Aliases for backwards compatibility
-$text-body-line-height: type-scale('body-line-height');
-$text-title-line-height: type-scale('title-md-line-height');
+$text-body-line-height: $body-line-height;
+$text-title-line-height: $title-md-line-height;
 $text-display-line-height: $text-title-line-height;
 
 @mixin text-display-xxl { @include text-title-2xl; }
