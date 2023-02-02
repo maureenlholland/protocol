@@ -6,46 +6,6 @@
 // themes. Mixins and functions can draw from these variable maps, swapping to
 // a different map based on the value of the global $brand-theme variable.
 
-@import 'mozilla';
-@import 'firefox';
-
-:root {
-    --v-grid-xs: #{$layout-md};
-    --h-grid-xs: #{$layout-xs};
-
-    // sm is the same as xs
-    --v-grid-sm: #{$layout-md};
-    --h-grid-sm: #{$layout-xs};
-
-    // md
-    --v-grid-md: #{$layout-md};
-    --h-grid-md: #{$layout-lg};
-
-    // lg is the same as medium
-    --v-grid-lg: #{$layout-md};
-    --h-grid-lg: #{$layout-lg};
-
-    // xl
-    --v-grid-xl: #{$layout-xl};
-    --h-grid-xl: 80px;
-
-    @if $brand-theme == 'mozilla' {
-        @extend %mozilla-theme;
-        @extend %mozilla-type-scale;
-
-        @if $type-scale == 'condensed' {
-            @extend %mozilla-type-scale-condensed;
-        }
-    } @else if $brand-theme == 'firefox' {
-        @extend %firefox-theme;
-        @extend %firefox-type-scale;
-
-        @if $type-scale == 'condensed' {
-            @extend %firefox-type-scale-condensed;
-        }
-    }
-}
-
 // Default "theme" that will be served to legacy browsers -  IE 11 etc
 $v-grid-xs: $layout-md;
 $h-grid-xs: $layout-xs;
@@ -108,6 +68,7 @@ $body-md-size: 16px;
 $body-sm-size: 14px;
 $body-xs-size: 12px;
 $body-line-height: 1.5;
+
 
 // * -------------------------------------------------------------------------- */
 // Vertical and Horizontal Spacing
